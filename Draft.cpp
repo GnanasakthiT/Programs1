@@ -3,8 +3,10 @@
 #include <string>
 #include <queue>
 #include <algorithm>
+#include <numeric>
 
 using namespace std;
 
 int main(){
+	
 }
