@@ -1,3 +1,2 @@
-This is a text file
-These files end with the extension of txt
-These are human readable too
+Hello
+Make us proud
