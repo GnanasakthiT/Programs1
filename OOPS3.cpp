@@ -25,6 +25,7 @@ public:
 };
 
 class C : public A , public B{
+	public:
 	C(){
 		cout << "C cons" << endl;
 	}
