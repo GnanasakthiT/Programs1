@@ -1,7 +1,17 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
-int main(){
+void solve(){
 	
+}
+
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		solve();
+	}	
 }
