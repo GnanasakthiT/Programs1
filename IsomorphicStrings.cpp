@@ -15,9 +15,11 @@ bool isIsomorphic(string a, string b){
 		count2[c]++;
 	}
 	
-	for(auto map : count1){
-		
+	if(count1.size() == count2.size()){
+		return true;
 	}
+	
+	return false;
 }
 
 int main(){
@@ -26,7 +28,7 @@ int main(){
 	string inp2;
 	cin >> inp2;
 	
-	if(isIsomorphic){
+	if(isIsomorphic(inp1, inp2)){
 		cout << "Yes";
 		return 0;
 	}

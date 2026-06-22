@@ -1,17 +1,8 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
 
 using namespace std;
 
-void solve(){
-	
-}
-
 int main(){
-	int tc;
-	cin >> tc;
-	while(tc--){
-		solve();
-	}	
+	
 }

@@ -24,10 +24,11 @@ int main(){
 
     for(i = 0; i < 26; i++){
         if(counter[i] != 0){
-            return false;
+			cout << "No";
+            return 0;
 
         }
     }
 
-    return true;
+	cout << "Yes";
 }
