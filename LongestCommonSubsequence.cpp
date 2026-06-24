@@ -24,5 +24,12 @@ int main(){
 		}
 	}
 	
+	for(int row = 0; row <= R; row++){
+		for(int col = 0; col <= C; col++){
+			cout << grid[row][col];
+		}
+		cout << endl;
+	}
+	
 	cout << grid[R][C] << endl;
 }
