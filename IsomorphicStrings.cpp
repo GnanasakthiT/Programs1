@@ -1,37 +1,36 @@
 #include <iostream>
 #include <string>
-#include <unordered_map>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
-bool isIsomorphic(string a, string b){
-	unordered_map<char, int> count1;	
-	unordered_map<char, int> count2;
-	
-	for(char c : a){
-		count1[c]++;
-	}
-	for(char c : b){
-		count2[c]++;
-	}
-	
-	if(count1.size() == count2.size()){
-		return true;
-	}
-	
-	return false;
-}
-
 int main(){
-	string inp1;
-	cin >> inp1;
-	string inp2;
-	cin >> inp2;
+	string s, t;
+	cin >> s >> t;
 	
-	if(isIsomorphic(inp1, inp2)){
-		cout << "Yes";
-		return 0;
+	map<char, char> link;
+	
+	int len = s.size();
+	
+	for(int ind = 0; ind < len; ind++){
+		if(link.find(s[ind]) != link.end()){
+			if(link[s[ind]] != t[ind]){
+				cout << "No";
+				return 0;
+			}
+		}
+		else{
+			link[s[ind]] = t[ind];
+		}
 	}
-	cout << "No";
 	
+	for(auto each : link){
+		if(count(s.begin(), s.end(), each.first) != count(t.begin(), t.end(), each.second)){
+			cout << "No";
+			return 0;
+		}
+	}
+	
+	cout << "Yes";
 }

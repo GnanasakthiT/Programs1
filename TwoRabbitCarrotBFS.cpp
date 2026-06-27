@@ -56,6 +56,7 @@ int main(){
 			}
 		}
 	}
+	cout << rabbits[0] << ' ' << rabbits[1] << endl;
 	
 	if(rabbits[0] < rabbits[1]){
 		cout << "Rabbit 1 Wins " << rabbits[0] << endl;

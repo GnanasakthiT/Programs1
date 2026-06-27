@@ -3,6 +3,10 @@
 
 using namespace std;
 
+void inbuiltFun(string str, string substr){
+	if(str)
+}
+
 void func(string str, string substr){
 	int l1 = str.size(), l2 = substr.size();
 	
@@ -35,26 +39,27 @@ int main(){
 	s1 += s1;
 	int p1 = 0, p2 = 0;
 	// func(s1, s2);
+	inbuiltFun(s1, s2);
 	
-	while(p1 < s1.size()){
-		if(s1[p1] == s2[p2]){
-			p1++;
-			p2++;
-			if(p2 == s2.size()){
-				cout << "Yes";
-				return 0;
-			}
-		}
-		else{
-			if(p2 != 0){
-				p1 = p1 - p2 + 1;
-				p2 = 0;
-			}
-			else{
-				p1++;
-			}
-		}
-	}
-	
-	cout << "No";
+	// while(p1 < s1.size()){
+		// if(s1[p1] == s2[p2]){
+			// p1++;
+			// p2++;
+			// if(p2 == s2.size()){
+				// cout << "Yes";
+				// return 0;
+			// }
+		// }
+		// else{
+			// if(p2 != 0){
+				// p1 = p1 - p2 + 1;
+				// p2 = 0;
+			// }
+			// else{
+				// p1++;
+			// }
+		// }
+	// }
+// 	
+	// cout << "No";
 }
