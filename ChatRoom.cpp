@@ -10,9 +10,9 @@ int main(){
 	int ind = 0;
 	
 	for(int idx = 0; idx < (int)inp.size(); idx++){
-		if(hello[ind] == inp[idx]){
+		if(inp[ind] == inp[idx]){
 			ind++;
-			if(ind == (int)hello.size()){
+			if(ind == (int)inp.size()){
 				cout << "YES" << endl;
 				return 0;
 			}
