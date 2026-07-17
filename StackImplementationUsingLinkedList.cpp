@@ -18,6 +18,10 @@ Node * head = NULL;
 
 void push(int value){
     Node* temp = new Node(value);
+    if(head == NULL){
+        head = temp;
+        return;
+    }
     temp->next = head;
     head = temp;
 }

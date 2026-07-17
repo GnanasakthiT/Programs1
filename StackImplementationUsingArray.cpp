@@ -3,7 +3,7 @@
 using namespace std;
 
 int *arr;
-int topPtr = 0, len;
+int topPtr = -1, len;
 
 void push(int val){
     
@@ -11,13 +11,14 @@ void push(int val){
         cout << "Overflow!" << endl << endl;
     }
     else{
-        arr[topPtr++] = val;
+        topPtr++;
+        arr[topPtr] = val;
     }
     cout << "top position: " << topPtr << endl;
 }
 
 void pop(){
-    if(topPtr == 0){
+    if(topPtr == -1){
         cout << "Underflow!" << endl << endl;
         return;
     }
@@ -27,7 +28,7 @@ void pop(){
 }
 
 void peek(){
-    if(topPtr == 0){
+    if(topPtr == -1){
         cout << "Empty set" << endl;
     }
     else{
@@ -36,7 +37,7 @@ void peek(){
 }
 
 void isEmpty(){
-    if(topPtr == 0){
+    if(topPtr == -1){
         cout << "Yes empty" << endl;
     }
     else{
@@ -45,7 +46,10 @@ void isEmpty(){
 }
 
 void printArray(){
-    for(int ind = 0; ind < len; ind++){
+    if(topPtr == -1){
+        cout << "Empty set" << endl;
+    }
+    for(int ind = 0; ind < topPtr; ind++){
         cout << arr[ind] << endl;
     }
     cout << endl;

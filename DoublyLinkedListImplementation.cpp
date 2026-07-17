@@ -18,19 +18,15 @@ class Node{
 Node* head = NULL;
 
 void insertAtBegin(int val){
-    Node* temp = NULL;
+    Node* temp = new Node(val);
     Node* ptr = NULL;
     if(head == NULL){
-        head = new Node(val);
+        head = temp;
     }
     else{
-        temp = new Node(val);
-        temp->prev = NULL;
         temp->next = head;
-        ptr = temp;
-        temp = temp->next;
-        temp->prev = ptr;
-        head = ptr;
+        head->prev = temp;
+        head = temp;
     }
 }
 
@@ -50,6 +46,10 @@ void insertAtEnd(int val){
 }
 
 void traverseFromBegin(){
+    if(head == NULL){
+        cout << "Already empty!" << endl;
+        return;
+    }
     Node* ptr = head;
     while(ptr != NULL){
         cout << ptr->data << ' ';
@@ -59,6 +59,10 @@ void traverseFromBegin(){
 }
 
 void traverseFromEnd(){
+    if(head->next == NULL){
+        cout << "Already empty!" << endl;
+        return;
+    }
     Node* ptr = head;
     while(ptr->next != NULL){
         ptr = ptr->next;
@@ -77,6 +81,7 @@ void deleteBegin(){
         cout << "Already empty" << endl << endl;
         return;
     }
+    Node* temp = head;
     if(head->next == NULL){
         head = NULL;
     }
@@ -84,6 +89,7 @@ void deleteBegin(){
         head = head->next;
         head->prev = NULL;
     }
+    delete temp;
 }
 
 void deleteEnd(){
@@ -92,6 +98,7 @@ void deleteEnd(){
         return;
     }
     if(head->next == NULL){
+        delete head;
         head = NULL;
     }
     else{
@@ -103,8 +110,8 @@ void deleteEnd(){
         temp = ptr->prev;
         ptr->prev = NULL;
         temp->next = NULL;
+        delete ptr;
     }
-
 }
 
 int main(){
