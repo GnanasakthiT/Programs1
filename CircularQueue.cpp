@@ -4,53 +4,40 @@ using namespace std;
 
 class Queue{
     public:
-    int *arr;
     int len;
-    int front;
+    int* arr;
     int rear;
+    int front;
 
     Queue(int size){
         len = size;
-        int temp[size];
-        arr = temp;
-        front = -1;
+        arr = new int[len];
         rear = -1;
+        front = -1;
     }
 
     void enqueue(int val){
-        if(front == len - 1){
-            cout << "Overflow!" << endl;
-            return;
-        }
-        if(rear == -1 && front == -1){
-            rear = 0;
-        }
-        front++;
-        arr[front] = val;
-        cout << "Added!" << endl;
+
     }
 
     void dequeue(){
-        if(front == -1 || front > rear || front >= len){
-            cout << "Underflow!" << endl;
-            return;
-        }
-        else{
-            cout << arr[front] << ' ';
-            front++;
-        }
+
     }
 
     void display(){
-        for(int ind = 0; ind < len; ind++){
-            cout << arr[ind] << ' ';
-        }
+
     }
 };
 
 int main(){
-    Queue myQueue(5);
+    int len;
+    cout << "Enter the length of the queue: ";
+    cin >> len;
+
+    Queue myQueue(len);
+
     int choice, val;
+
     while(true){
         cout << "Select your choice:" << endl;
         cout << "1. Enqueue" << endl;
@@ -66,20 +53,25 @@ int main(){
             cout << "Enter the value: ";
             cin >> val;
             myQueue.enqueue(val);
+            cout << endl;
             break;
         
         case 2:
             myQueue.dequeue();
+            cout << endl;
             break;
         
         case 3:
             myQueue.display();
+            cout << endl;
             break;
         case -1:
             cout << "Exitting" << endl;
+            cout << endl;
             return 0;
         default:
             cout << "INVALID CHOICE" << endl;
+            cout << endl;
             break;
         }
     }
