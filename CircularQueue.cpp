@@ -17,6 +17,15 @@ class Queue{
     }
 
     void enqueue(int val){
+        if(rear == -1 && front == -1){
+            front = 0;
+        }
+        rear++;
+        if(rear%len == front){
+            cout << "Overflow!" << endl;
+            return;
+        }
+        arr[rear%len] = 
 
     }
 
